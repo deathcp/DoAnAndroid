@@ -10,4 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.quan.myapplication.MainActivity">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lstBook"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

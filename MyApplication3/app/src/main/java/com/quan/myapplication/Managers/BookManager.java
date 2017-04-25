@@ -27,7 +27,7 @@ public class BookManager {
         }
     }
 
-    public ArrayList<Book> getAllShopping() {
+    public ArrayList<Book> getAllBook() {
         String sql = "SELECT * FROM kimdung";
         Cursor cur = mDatabase.rawQuery(sql, null);
         ArrayList<Book> lstData = new ArrayList<Book>();

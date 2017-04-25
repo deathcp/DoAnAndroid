@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.quan.myapplication.Entities.Book;
+import com.quan.myapplication.R;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,8 @@ public class BookAdapter extends ArrayAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(mLayoutResource, null);
         Book book = mLstBook.get(position);
-
+        TextView bookName = (TextView) convertView.findViewById(R.id.bookName);
+        bookName.setText(book.getBookName());
         return convertView;
     }
 
