@@ -1,4 +1,4 @@
-package com.quan.myapplication;
+package com.quan.myapplication.Managers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.quan.myapplication.DatabaseHelper;
 import com.quan.myapplication.Entities.Book;
 
 import java.util.ArrayList;
