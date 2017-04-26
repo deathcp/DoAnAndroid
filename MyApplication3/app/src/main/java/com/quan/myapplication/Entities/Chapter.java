@@ -1,12 +1,13 @@
 package com.quan.myapplication.Entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Administrator PC on 25-Apr-17.
  */
 
-public class Chapter {
+public class Chapter implements Serializable {
     private Integer chapterID;
     private String chapterName;
     private String source;
@@ -72,5 +73,10 @@ public class Chapter {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    @Override
+    public String toString() {
+        return getChapterName();
     }
 }

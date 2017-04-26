@@ -1,10 +1,12 @@
 package com.quan.myapplication.Entities;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator PC on 25-Apr-17.
  */
 
-public class Book {
+public class Book implements Serializable{
     private Integer bookID;
     private String bookName;
     private Integer authorID;

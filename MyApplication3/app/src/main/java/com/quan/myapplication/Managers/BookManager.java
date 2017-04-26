@@ -5,7 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.quan.myapplication.Entities.Book;
+import com.quan.myapplication.Entities.Chapter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -16,8 +18,9 @@ public class BookManager {
     DatabaseHelper mHelper;
     SQLiteDatabase mDatabase;
 
-    public BookManager(Context context) {
-        mHelper = new DatabaseHelper(context, null, null, 0);
+    public BookManager(Context context) throws IOException {
+        mHelper = new DatabaseHelper(context);
+        mHelper.createDataBase();
         mDatabase = mHelper.getWritableDatabase();
     }
 
@@ -40,6 +43,25 @@ public class BookManager {
             book.setBookDescription(cur.getString(4));
 
             lstData.add(book);
+        }
+        return lstData;
+    }
+
+    public ArrayList<Chapter> getAllChapter(Integer bookID)
+    {
+        String sql = "SELECT * FROM st_kimdung where stID = ?";
+        String[] params = {bookID.toString()};
+        Cursor cur = mDatabase.rawQuery(sql, params);
+        ArrayList<Chapter> lstData = new ArrayList<Chapter>();
+        while (cur.moveToNext()) {
+            Chapter chapter = new Chapter();
+            chapter.setChapterID(cur.getInt(0));
+            chapter.setChapterName(cur.getString(1));
+            chapter.setSource(cur.getString(2));
+            chapter.setChapterContent(cur.getString(3));
+            chapter.setBookID(cur.getInt(4));
+
+            lstData.add(chapter);
         }
         return lstData;
     }
