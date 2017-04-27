@@ -6,15 +6,16 @@
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_gravity="right"
         android:background="@android:color/transparent"
-        android:src="@android:drawable/ic_menu_search" />
+        android:src="@android:drawable/ic_menu_search"
+        android:layout_alignParentTop="true" />
     <EditText
         android:id="@+id/searchfield"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/imageButton"
-        android:inputType="textFilter" />
+        android:layout_height="match_parent"
+        android:inputType="textFilter"
+        android:layout_toEndOf="@+id/imageButton" />
 </RelativeLayout>

@@ -9,9 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".BookActivity"
+            android:name=".Activities.BookActivity"
             android:label="Danh sách truyện"
-            android:resumeWhilePausing="true">
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChapterActivity"
+            android:name=".Activities.ChapterActivity"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
-            android:name=".ChapterDetailActivity"
+            android:name=".Activities.ChapterDetailActivity"
             android:windowSoftInputMode="adjustPan"></activity>
     </application>
 

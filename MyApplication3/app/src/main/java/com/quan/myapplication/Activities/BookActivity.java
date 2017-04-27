@@ -1,4 +1,4 @@
-package com.quan.myapplication;
+package com.quan.myapplication.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.quan.myapplication.Adapters.BookAdapter;
 import com.quan.myapplication.Entities.Book;
 import com.quan.myapplication.Managers.BookManager;
+import com.quan.myapplication.R;
 
 import java.io.IOException;
 
