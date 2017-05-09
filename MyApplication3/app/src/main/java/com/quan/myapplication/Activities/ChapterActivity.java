@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,7 +32,11 @@ public class ChapterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter);
+        init();
+    }
 
+    private void init()
+    {
         try {
             bookManager = new BookManager(ChapterActivity.this);
         } catch (IOException e) {
@@ -42,26 +47,6 @@ public class ChapterActivity extends AppCompatActivity {
         {
             myIntent = getIntent();
         }
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(R.layout.menu_search);
-        // Lấy widget EditText
-        EditText search = (EditText) actionBar.getCustomView().findViewById(
-                R.id.searchfield);
-        search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId,
-                                          KeyEvent event) {
-                Toast.makeText(ChapterActivity.this, "Search triggered",
-                        Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
-        // Cài đặt chế độ hiển thị
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM
-                | ActionBar.DISPLAY_SHOW_HOME);
-        ImageButton imgSearch = (ImageButton)
-                actionBar.getCustomView().findViewById(R.id.imageButton);
-
         Book book = (Book) myIntent.getSerializableExtra("book");
         //Set book name
         setTitle(book.getBookName());
@@ -85,6 +70,11 @@ public class ChapterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.layout.menu_search, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
