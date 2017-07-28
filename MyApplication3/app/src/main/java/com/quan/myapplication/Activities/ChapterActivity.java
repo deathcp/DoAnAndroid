@@ -15,13 +15,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+ sad sad sad sad sấd 
 import com.quan.myapplication.Entities.Book;
 import com.quan.myapplication.Entities.Chapter;
 import com.quan.myapplication.Managers.BookManager;
 import com.quan.myapplication.R;
 
-import java.io.IOException;
+import java.io.IOException;d sadsad sad sad 
 import java.util.ArrayList;
 
 public class ChapterActivity extends AppCompatActivity {
